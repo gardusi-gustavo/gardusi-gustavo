@@ -14,8 +14,9 @@ containerization, and repository governance.
 
 ### 2. Tooling and control plane
 
-- **package-sh** — shell automation, Git hooks, and pinned helper scripts.
-- **devops** — reusable CI workflows, repository policy, backups, and bootstrap tooling.
+- **package-sh** — portable shell automation, Git hooks, bundle primitives, and pinned helper scripts.
+- **package-docker** — Dockerfiles, CI images, runtime installers, and image build helpers.
+- **workflow-devops** — reusable CI workflows, repository policy, inventory, backups, and bootstrap tooling.
 
 ### 3. Language packages
 
