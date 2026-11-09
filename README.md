@@ -1,54 +1,95 @@
 # Gustavo Gardusi
 
-Systems software engineer focused on backend architecture, distributed systems,
-containerization, and repository governance.
+Systems software engineer specializing in backend architecture, distributed systems, containerization, and repository governance.
 
-## Architecture portfolio
+---
 
-### 1. Contracts
+## Architecture Portfolio
 
-- **package-proto** — pure `.proto` service definitions and wire contracts, managed with Buf.
-- **package-json** — JSON Schema definitions for API payloads, events, configuration, and repository contracts.
-- **package-sql** — canonical SQL schemas, migrations, and dialect notes.
-- **package-graphql** — GraphQL SDL schemas for query and mutation contracts.
+### -1. Private Boundary
 
-### 2. Tooling and control plane
+| Repository | Description |
+| :--- | :--- |
+| `private` *(Private)* | Secure vault backups, raw notes, and draft incubators for eventual public promotion |
 
-- **package-sh** — portable shell automation, Git hooks, bundle primitives, and pinned helper scripts.
-- **package-docker** — Dockerfiles, CI images, runtime installers, and image build helpers.
-- **workflow-devops** — reusable CI workflows, repository policy, inventory, backups, and bootstrap tooling.
+### 0. Meta & Governance
 
-### 3. Language packages
+| Repository | Description |
+| :--- | :--- |
+| [`.github`](https://github.com/gardusi-gustavo/.github) | Account-wide community health files, issue/PR templates, and governance defaults |
+| [`gardusi-gustavo`](https://github.com/gardusi-gustavo/gardusi-gustavo) | Account landing page, architecture portfolio, and organizational overview |
 
-Publishable, framework-free reference libraries:
+### 1. Interface & Data Contracts (`contract-*`)
 
-- **package-cpp** — C++ algorithms and systems reference.
-- **package-python** — Python ETL and utility library.
-- **package-ts** — TypeScript/npm utilities and DOM helpers.
-- **package-rs** — Rust crate reference.
-- **package-go** — Go module reference.
-- **package-java** — JVM library with Java and Kotlin examples.
-- **package-cs** — C# reference.
-- **package-php** — PHP/Composer reference.
-- **package-rb** — Ruby/Gem reference.
-- **package-ui** — pure HTML/CSS design tokens and structural partials.
+Pure schema registries, wire formats, and protocol definitions serving as canonical boundary sources of truth:
 
-### 4. Data
+| Repository | Description |
+| :--- | :--- |
+| contract-graphql | Pure GraphQL SDL schemas for query and mutation contracts |
+| contract-json | JSON Schema definitions for API payloads, events, and configuration contracts |
+| contract-proto | Pure `.proto` service definitions and wire contracts managed via Buf |
+| contract-sql | Canonical SQL schemas, migration templates, and dialect notes |
 
-- **database** — public raw data lake, daily datasets, validation schemas, and seeds.
+### 2. Language, Runtime & Infra Packages (`package-*`)
 
-### 5. Workflows
+Publishable, zero-framework reference libraries, infrastructure modules, and runtime definitions:
 
-- **workflow-news**, **workflow-stocks**, **workflow-lottery**, **workflow-agent** — data extraction, rolling ingestion, and event-driven runners.
+| Repository | Description |
+| :--- | :--- |
+| package-cdk | Programmatic cloud infrastructure constructs, multi-cloud adapters, and synthesis tooling |
+| package-cpp | C++ algorithms, low-latency utilities, and systems reference |
+| package-cs | C# reference implementation |
+| package-docker | Dockerfiles, multi-stage builder patterns, and runtime environment setups |
+| package-elixir | Elixir / BEAM actor concurrency reference and OTP patterns |
+| package-go | Go module reference and concurrent systems patterns |
+| package-java | Java JVM reference library and enterprise backend patterns |
+| package-kotlin | Kotlin JVM/Multiplatform reference (mirroring Java architecture) |
+| package-php | PHP / Composer reference implementation |
+| package-python | Python ETL pipelines and utility library |
+| package-rb | Ruby / Gem reference implementation |
+| package-rs | Rust crate reference |
+| package-sh | Portable POSIX/Bash automation, git hooks, bundle primitives, and helper scripts |
+| package-swift | Swift package reference and Apple platform runtime patterns |
+| package-terraform | Infrastructure as Code modules and HCL blueprints |
+| package-ts | TypeScript / npm utilities and DOM helpers |
+| package-ui | Pure HTML/CSS design tokens and structural layout partials |
+| package-zig | Zig low-level memory control, C-interop, and cross-compilation reference |
 
-### 6. Dashboards
+### 3. Application & Control Workflows (`workflow-*`)
 
-- **dashboard-news**, **dashboard-stocks**, **dashboard-lottery**, **dashboard-wiki** — static interfaces built from `database` and `package-ui`.
+Automated data pipelines, background runners, and CI/CD control planes:
 
-### 7. Games
+| Repository | Description |
+| :--- | :--- |
+| workflow-agent | Autonomous repository maintenance agent and issue runner |
+| workflow-devops | Reusable GitHub Actions workflows, policy validation, inventory, and backup runners |
+| workflow-lottery | Statistical analysis and data collection pipelines |
+| workflow-news | Automated news syndication and ingestion runner |
+| workflow-stocks | Market data ingestion and quantitative metrics runner |
 
-- **game-sudoku**, **game-logic-grid**, **game-crosswords** — algorithmic puzzle applications.
+### 4. Consumer Dashboards (`dashboard-*`)
 
-### 8. Private boundary
+Static, client-side UI interfaces consuming backend APIs and `package-ui`:
 
-- **private** — private configurations, vault backups, and sensitive administrative data.
+| Repository | Description |
+| :--- | :--- |
+| dashboard-lottery | Web interface for statistical lottery data visualization |
+| dashboard-news | Web interface for aggregated news feeds |
+| dashboard-stocks | Web interface for market analytics and stock metrics |
+| dashboard-wiki | Personal knowledge base and system architecture specs |
+
+### 5. Interactive Games (`game-*`)
+
+Algorithmic puzzle platforms and interactive applications:
+
+| Repository | Description |
+| :--- | :--- |
+| game-crosswords | Algorithmic crossword puzzle application |
+| game-logic-grid | Deductive logic-grid puzzle application |
+| game-sudoku | High-performance Sudoku generator and solver |
+
+### 6. Operational Data State (`database`)
+
+| Repository | Description |
+| :--- | :--- |
+| database | Public raw data lake, daily datasets, validation schemas, and seeds |
