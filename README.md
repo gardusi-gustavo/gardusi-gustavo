@@ -21,13 +21,15 @@ Systems software engineer specializing in backend architecture, distributed syst
 
 ### 1. Interface & Data Contracts (`contract-*`)
 
-Pure schema registries, wire formats, protocol definitions, and account-level structured governance data:
+Pure schema registries, wire formats, REST contracts, relational contracts, and account-level structured governance data:
 
 | Repository | Description |
 | :--- | :--- |
 | [`contract-graphql`](https://github.com/gardusi-gustavo/contract-graphql) | Pure GraphQL SDL schemas for query and mutation contracts |
 | [`contract-json`](https://github.com/gardusi-gustavo/contract-json) | JSON Schema definitions and account-level governance manifests |
+| [`contract-openapi`](https://github.com/gardusi-gustavo/contract-openapi) | OpenAPI 3.1 REST specifications for the public devops data plane |
 | [`contract-proto`](https://github.com/gardusi-gustavo/contract-proto) | Pure `.proto` service definitions and wire contracts managed via Buf |
+| [`contract-sql`](https://github.com/gardusi-gustavo/contract-sql) | Relational DDL schemas, migration blueprints, and query contracts |
 
 ### 2. Language, Runtime & Infra Packages (`package-*`)
 
@@ -35,7 +37,6 @@ Publishable, zero-framework reference libraries, infrastructure modules, databas
 
 | Repository | Description |
 | :--- | :--- |
-| [`package-cdk`](https://github.com/gardusi-gustavo/package-cdk) | Programmatic cloud infrastructure constructs, multi-cloud adapters, and synthesis tooling |
 | [`package-cpp`](https://github.com/gardusi-gustavo/package-cpp) | C++ algorithms, low-latency utilities, and systems reference |
 | [`package-cs`](https://github.com/gardusi-gustavo/package-cs) | C# reference implementation |
 | [`package-docker`](https://github.com/gardusi-gustavo/package-docker) | Dockerfiles, multi-stage builder patterns, and runtime environment setups |
@@ -43,6 +44,7 @@ Publishable, zero-framework reference libraries, infrastructure modules, databas
 | [`package-go`](https://github.com/gardusi-gustavo/package-go) | Go module reference and concurrent systems patterns |
 | [`package-java`](https://github.com/gardusi-gustavo/package-java) | Java JVM reference library and enterprise backend patterns |
 | [`package-kotlin`](https://github.com/gardusi-gustavo/package-kotlin) | Kotlin JVM/Multiplatform reference (mirroring Java architecture) |
+| [`package-lua`](https://github.com/gardusi-gustavo/package-lua) | Dependency-free Lua helpers for embedded automation |
 | [`package-md`](https://github.com/gardusi-gustavo/package-md) | Reusable Markdown templates, documentation standards, and Mermaid diagrams |
 | [`package-php`](https://github.com/gardusi-gustavo/package-php) | PHP / Composer reference implementation |
 | [`package-python`](https://github.com/gardusi-gustavo/package-python) | Python ETL pipelines and utility library |
@@ -50,7 +52,6 @@ Publishable, zero-framework reference libraries, infrastructure modules, databas
 | [`package-rs`](https://github.com/gardusi-gustavo/package-rs) | Rust crate reference |
 | [`package-scala`](https://github.com/gardusi-gustavo/package-scala) | Scala 3.3 functional programming, immutable patterns, and JVM concurrency |
 | [`package-sh`](https://github.com/gardusi-gustavo/package-sh) | Portable POSIX/Bash automation, git hooks, bundle primitives, and helper scripts |
-| [`package-sql`](https://github.com/gardusi-gustavo/package-sql) | Relational DDL schemas, migration blueprints, indexing strategies, and SQL patterns |
 | [`package-swift`](https://github.com/gardusi-gustavo/package-swift) | Swift package reference and Apple platform runtime patterns |
 | [`package-terraform`](https://github.com/gardusi-gustavo/package-terraform) | Infrastructure as Code modules, HCL blueprints, and Kubernetes manifest examples |
 | [`package-ts`](https://github.com/gardusi-gustavo/package-ts) | TypeScript / npm utilities and DOM helpers |
@@ -73,11 +74,11 @@ Public raw data lakes, daily datasets, validation schemas, and seeds partitioned
 
 | Repository | Description |
 | :--- | :--- |
-| [`database-agent`](https://github.com/gardusi-gustavo/database-agent) | Agent task summaries, public execution ledgers, and structural run metrics |
 | [`database-devops`](https://github.com/gardusi-gustavo/database-devops) | Sanitized repository health data, workflow metrics, and backup verification summaries |
 | [`database-lottery`](https://github.com/gardusi-gustavo/database-lottery) | Historical lottery draws, statistical result datasets, and validation seeds |
 | [`database-news`](https://github.com/gardusi-gustavo/database-news) | Aggregated news feed indices, daily article metadata, and text datasets |
 | [`database-stocks`](https://github.com/gardusi-gustavo/database-stocks) | Historical ticker data, daily market metrics, and quantitative datasets |
+| [`database-wiki`](https://github.com/gardusi-gustavo/database-wiki) | Structured knowledge-base pages and wiki indices consumed by dashboard-wiki |
 
 ### 5. Interactive Games (`game-*`)
 
