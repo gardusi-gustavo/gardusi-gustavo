@@ -101,3 +101,24 @@ Static client-side UI interfaces and internal operations consoles consuming `dat
 | [`dashboard-news`](https://github.com/gardusi-gustavo/dashboard-news) | Web interface for aggregated news feeds |
 | [`dashboard-stocks`](https://github.com/gardusi-gustavo/dashboard-stocks) | Web interface for market analytics and stock metrics |
 | [`dashboard-wiki`](https://github.com/gardusi-gustavo/dashboard-wiki) | Personal knowledge base and system architecture specs |
+
+---
+
+## GitHub metadata
+
+The repositories above are mirrored locally as `github/<prefix>/<repo>` — one directory per repository domain, and one fine-grained personal access token per domain.
+
+| Domain | Local prefix | Repositories |
+| :--- | :--- | :--- |
+| Contracts | `contract/` | 5 |
+| Packages | `package/` | 20 |
+| Workflows | `workflow/` | 3 |
+| Databases | `database/` | 5 |
+| Games | `game/` | 3 |
+| Dashboards | `dashboard/` | 5 |
+| Meta | `meta/` | 2 |
+
+Tokens are scoped to a single domain and limited to contents, pull-request, issue, and workflow writes. Administration is never granted, so no token can delete a repository. The private repository is excluded from the local workspace: it has no token and is updated manually in GitHub Codespaces.
+
+- [Workspace manifest](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/workspace.json)
+- [Local workspace runbook](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/local-workspace.md)
