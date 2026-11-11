@@ -122,3 +122,57 @@ Tokens are scoped to a single domain and limited to contents, pull-request, issu
 
 - [Workspace manifest](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/workspace.json)
 - [Local workspace runbook](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/local-workspace.md)
+
+## Setup
+
+Local workspace: `github/<prefix>/<repo>`, one fine-grained token per domain, and no local copy of `private`.
+
+Prerequisites: git, gh, python3, opencode.
+
+1. `mkdir -p ~/github/{contract,dashboard,database,game,package,workflow,meta}`
+2. `python3 scripts/workspace.py init --root ~/github`
+3. `python3 scripts/workspace.py add <domain> --token-file <path>`
+4. `python3 scripts/workspace.py clone`
+5. `opencode` — run the chat-to-issue prompt for ongoing work
+
+Tokens use contents, pull-request, issue, and workflow write; administration is never granted.
+
+- [Workspace manifest](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/workspace.json)
+- [Local workspace runbook](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/local-workspace.md)
+
+## Portable setup
+
+Runs on any arm64 Android 12+ device: Termux, an Alpine container, and opencode. No root, no GPU, about 30 minutes.
+
+Minimum: 8 GB RAM and 128 GB storage. Day to day the device is only a terminal and a review screen; CI and the agents run in GitHub Actions.
+
+- [Portable setup runbook](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/portable-setup.md)
+
+## Operating model
+
+Think in chat; one conversation is one idea. Convert it to an issue or a comment, then delete the chat. Every issue becomes a short readable spec before an agent drafts a small PR. Humans review slowly and merge.
+
+Budgets are bands, not targets:
+
+| Resource per day | Floor | Roof | Target |
+| :--- | ---: | ---: | ---: |
+| AI spend | $0.50 | $1.50 | $1.00 |
+| Review | 60 min | 180 min | 120 min |
+| Chat and thinking | 30 min | 90 min | 60 min |
+| Merged PRs | 5 | 15 | 10 |
+| New issues | 5 | 15 | 10 |
+
+A PR should take about 12 minutes to review: 4 files, 250 lines, 5 commits. Open issues resume at 30 and pause at 40; the queue is allowed to be full.
+
+Empty is not the goal; flow is. Daily review, weekly triage, monthly restore drill.
+
+- [Operating model](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/operating-model.md)
+- [Operating budgets](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/operating.json)
+
+## Roadmap
+
+| Phase | Focus | Exit criteria |
+| :--- | :--- | :--- |
+| Now | Manual loop: write issues, generate with opencode, review and merge. Local workspace with one token per domain. | Zero live Gitea references; one ready PR per repo |
+| Next | Full automation: orchestrator picks issues, generator opens drafts, advisory AI review, daily budget ledger and state backups. | No repo selection or dispatch by hand |
+| Later | Cloud runtime only where state is unavoidable: game progress API, datasets on object storage, Pages stays the UI. | One game keeps progress across devices |
