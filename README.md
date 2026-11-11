@@ -150,7 +150,7 @@ Minimum: 8 GB RAM and 128 GB storage. Day to day the device is only a terminal a
 
 ## Operating model
 
-Think in chat; one conversation is one idea. Convert it to an issue or a comment, then delete the chat. Every issue becomes a short readable spec before an agent drafts a small PR. Humans review slowly and merge.
+Think in chat; one conversation is one parent issue. Convert it to an issue in this profile, or to a comment, then delete the chat. Each issue fans out into one child per repository and outcome, becomes a short readable spec, and only then does an agent draft a small PR. Humans review slowly and merge.
 
 Budgets are bands, not targets:
 
@@ -158,13 +158,16 @@ Budgets are bands, not targets:
 | :--- | ---: | ---: | ---: |
 | AI spend | $0.50 | $1.50 | $1.00 |
 | Review | 60 min | 180 min | 120 min |
-| Chat and thinking | 30 min | 90 min | 60 min |
+| Chat and thinking | 30 min | 90 min | 45 min |
+| Inbox triage | 15 min | 45 min | 30 min |
 | Merged PRs | 5 | 15 | 10 |
 | New issues | 5 | 15 | 10 |
 
-A PR should take about 12 minutes to review: 4 files, 250 lines, 5 commits. Open issues resume at 30 and pause at 40; the queue is allowed to be full.
+A PR should take about 12 minutes to review: 4 files, 250 lines, 5 commits.
 
-Empty is not the goal; flow is. Daily review, weekly triage, monthly restore drill.
+Caps are per repository, never global: the inbox holds up to 100 open issues, each repository up to 20, with one ready PR and two drafts at a time. Work is chosen by priority, one repository at a time, until that repository's queue clears; a low-value repository may wait indefinitely.
+
+Hardest first: review and merge at the start of the day, triage the inbox at the end. Empty is not the goal; flow is. Daily review, weekly triage, monthly restore drill.
 
 - [Operating model](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/operating-model.md)
 - [Operating budgets](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/operating.json)
