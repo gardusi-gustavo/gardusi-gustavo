@@ -169,6 +169,8 @@ Caps are per repository, never global: the inbox holds up to 100 open issues, ea
 
 Hardest first: review and merge at the start of the day, triage the inbox at the end. Empty is not the goal; flow is. Daily review, weekly triage, monthly restore drill.
 
+Agents add issues, comments, labels, and pull requests. They never create or delete repositories, never change settings, and never edit or delete issues or pull requests.
+
 - [Operating model](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/operating-model.md)
 - [Operating budgets](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/operating.json)
 
