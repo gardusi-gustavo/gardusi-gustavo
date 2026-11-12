@@ -16,7 +16,7 @@ Systems software engineer specializing in backend architecture, distributed syst
 
 | Repository | Description |
 | :--- | :--- |
-| [`.github`](https://github.com/gardusi-gustavo/.github) | Native GitHub platform defaults, reusable Actions workflows, issue/PR templates, and community health files |
+| [`package-yml`](https://github.com/gardusi-gustavo/package-yml) | Reusable Actions workflows, caller templates, and workflow sync tooling |
 | [`gardusi-gustavo`](https://github.com/gardusi-gustavo/gardusi-gustavo) | Account landing page, architecture portfolio, and organizational overview |
 
 ### 1. Interface & Data Contracts (`contract-*`)
@@ -45,7 +45,7 @@ Publishable, zero-framework reference libraries, infrastructure modules, databas
 | [`package-java`](https://github.com/gardusi-gustavo/package-java) | Java JVM reference library and enterprise backend patterns |
 | [`package-kotlin`](https://github.com/gardusi-gustavo/package-kotlin) | Kotlin JVM/Multiplatform reference (mirroring Java architecture) |
 | [`package-lua`](https://github.com/gardusi-gustavo/package-lua) | Dependency-free Lua helpers for embedded automation |
-| [`package-md`](https://github.com/gardusi-gustavo/package-md) | Reusable Markdown templates, documentation standards, and Mermaid diagrams |
+| [`package-md`](https://github.com/gardusi-gustavo/package-md) | Reusable Markdown templates, documentation standards, community health files, and Mermaid diagrams |
 | [`package-php`](https://github.com/gardusi-gustavo/package-php) | PHP / Composer reference implementation |
 | [`package-python`](https://github.com/gardusi-gustavo/package-python) | Python ETL pipelines and utility library |
 | [`package-rb`](https://github.com/gardusi-gustavo/package-rb) | Ruby / Gem reference implementation |
