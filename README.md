@@ -108,36 +108,36 @@ Static client-side UI interfaces and internal operations consoles consuming `dat
 
 ## GitHub metadata
 
-The repositories above are mirrored locally as `github/<prefix>/<repo>` — one directory per repository domain, and one fine-grained personal access token per domain.
+The repositories above are mirrored locally as `github/<prefix>/<repo>` — one directory per repository domain. Git runs over SSH; workflows use the built-in `GITHUB_TOKEN` inside each repository.
 
 | Domain | Local prefix | Repositories |
 | :--- | :--- | :--- |
-| Contracts | `contract/` | 5 |
-| Packages | `package/` | 20 |
+| Contracts | `contract/` | 6 |
+| Packages | `package/` | 21 |
 | Workflows | `workflow/` | 3 |
 | Databases | `database/` | 5 |
 | Games | `game/` | 3 |
 | Dashboards | `dashboard/` | 5 |
 | Meta | `meta/` | 2 |
 
-Tokens are scoped to a single domain and limited to contents, pull-request, issue, and workflow writes. Administration is never granted, so no token can delete a repository. The private repository is excluded from the local workspace: it has no token and is updated manually in GitHub Codespaces.
+No personal access tokens and no GitHub Apps. The operator uses an SSH key; each workflow declares its own `GITHUB_TOKEN` permissions. Administration is never granted, so automation cannot delete a repository. The private repository is operator-only via SSH.
 
 - [Workspace manifest](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/workspace.json)
 - [Local workspace runbook](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/local-workspace.md)
 
 ## Setup
 
-Local workspace: `github/<prefix>/<repo>`, one fine-grained token per domain, and no local copy of `private`.
+Local workspace: `github/<prefix>/<repo>`, SSH for the operator, and no local copy of `private`.
 
-Prerequisites: git, gh, python3, opencode.
+Prerequisites: git, python3, opencode, and an SSH key registered with GitHub.
 
 1. `mkdir -p ~/github/{contract,dashboard,database,game,package,workflow,meta}`
-2. `python3 scripts/workspace.py init --root ~/github`
-3. `python3 scripts/workspace.py add <domain> --token-file <path>`
-4. `python3 scripts/workspace.py clone`
-5. `opencode` — run the chat-to-issue prompt for ongoing work
+2. `ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_github`
+3. Add the public key under Settings, SSH and GPG keys
+4. `git clone git@github.com:gardusi-gustavo/package-yml.git ~/github/meta/package-yml`
+5. Clone the rest with their SSH URLs; `opencode` for ongoing work
 
-Tokens use contents, pull-request, issue, and workflow write; administration is never granted.
+Every consumer repository runs only two workflows: `event-pull-request.yml` and `event-tag.yml`, imported from `package-yml`.
 
 - [Workspace manifest](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/workspace.json)
 - [Local workspace runbook](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/local-workspace.md)
@@ -180,6 +180,6 @@ Agents add issues, comments, labels, and pull requests. They never create or del
 
 | Phase | Focus | Exit criteria |
 | :--- | :--- | :--- |
-| Now | Manual loop: write issues, generate with opencode, review and merge. Local workspace with one token per domain. | Zero live Gitea references; one ready PR per repo |
+| Now | Manual loop: write issues, generate with opencode, review and merge. Local workspace with SSH and the built-in token. | Zero live Gitea references; one ready PR per repo |
 | Next | Full automation: orchestrator picks issues, generator opens drafts, advisory AI review, daily budget ledger and state backups. | No repo selection or dispatch by hand |
 | Later | Cloud runtime only where state is unavoidable: game progress API, datasets on object storage, Pages stays the UI. | One game keeps progress across devices |
