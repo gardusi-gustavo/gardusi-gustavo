@@ -60,17 +60,7 @@ Publishable, zero-framework reference libraries, infrastructure modules, databas
 | [`package-wat`](https://github.com/gardusi-gustavo/package-wat) | Hand-written WebAssembly Text source, build, and runtime harness |
 | [`package-zig`](https://github.com/gardusi-gustavo/package-zig) | Zig low-level memory control, C-interop, and cross-compilation reference |
 
-### 3. Pure Trigger Workflows (`workflow-*`)
-
-Automated data pipelines, background runners, and CI/CD control planes grouped strictly by trigger nature:
-
-| Repository | Description |
-| :--- | :--- |
-| [`workflow-event`](https://github.com/gardusi-gustavo/workflow-event) | Reactive automation runner handling pushes, PR checks, and webhook events |
-| [`workflow-manual`](https://github.com/gardusi-gustavo/workflow-manual) | Autonomous repository maintenance agent, issue runner, and interactive dispatch |
-| [`workflow-scheduled`](https://github.com/gardusi-gustavo/workflow-scheduled) | Thin time-based cron runner executing isolated data ingestion and backup jobs |
-
-### 4. Operational Data State (`database-*`)
+### 3. Operational Data State (`database-*`)
 
 Public raw data lakes, daily datasets, validation schemas, and seeds partitioned by domain:
 
@@ -82,7 +72,7 @@ Public raw data lakes, daily datasets, validation schemas, and seeds partitioned
 | [`database-stocks`](https://github.com/gardusi-gustavo/database-stocks) | Historical ticker data, daily market metrics, and quantitative datasets |
 | [`database-wiki`](https://github.com/gardusi-gustavo/database-wiki) | Structured knowledge-base pages and wiki indices consumed by dashboard-wiki |
 
-### 5. Interactive Games (`game-*`)
+### 4. Interactive Games (`game-*`)
 
 Algorithmic puzzle platforms and interactive applications:
 
@@ -92,7 +82,7 @@ Algorithmic puzzle platforms and interactive applications:
 | [`game-logic-grid`](https://github.com/gardusi-gustavo/game-logic-grid) | Deductive logic-grid puzzle application |
 | [`game-sudoku`](https://github.com/gardusi-gustavo/game-sudoku) | High-performance Sudoku generator and solver |
 
-### 6. Consumer Dashboards (`dashboard-*`)
+### 5. Consumer Dashboards (`dashboard-*`)
 
 Static client-side UI interfaces and internal operations consoles consuming `database-*` and `package-ui`:
 
@@ -114,11 +104,12 @@ The repositories above are mirrored locally as `github/<prefix>/<repo>` — one 
 | :--- | :--- | :--- |
 | Contracts | `contract/` | 6 |
 | Packages | `package/` | 21 |
-| Workflows | `workflow/` | 3 |
 | Databases | `database/` | 5 |
 | Games | `game/` | 3 |
 | Dashboards | `dashboard/` | 5 |
 | Meta | `meta/` | 2 |
+
+Workflow logic lives in `package-yml`. The former `workflow-*` repositories are retired; no consumer repository carries a scheduled workflow.
 
 No personal access tokens and no GitHub Apps. The operator uses an SSH key; each workflow declares its own `GITHUB_TOKEN` permissions. Administration is never granted, so automation cannot delete a repository. The private repository is operator-only via SSH.
 
