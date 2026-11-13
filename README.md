@@ -30,6 +30,7 @@ Pure schema registries, wire formats, REST contracts, relational contracts, and 
 | [`contract-openapi`](https://github.com/gardusi-gustavo/contract-openapi) | OpenAPI 3.1 REST specifications for the public devops data plane |
 | [`contract-proto`](https://github.com/gardusi-gustavo/contract-proto) | Pure `.proto` service definitions and wire contracts managed via Buf |
 | [`contract-sql`](https://github.com/gardusi-gustavo/contract-sql) | Relational DDL schemas, migration blueprints, and query contracts |
+| [`contract-wit`](https://github.com/gardusi-gustavo/contract-wit) | WebAssembly Component Model interfaces and worlds (`.wit`) |
 
 ### 2. Language, Runtime & Infra Packages (`package-*`)
 
@@ -56,6 +57,7 @@ Publishable, zero-framework reference libraries, infrastructure modules, databas
 | [`package-terraform`](https://github.com/gardusi-gustavo/package-terraform) | Infrastructure as Code modules, HCL blueprints, and Kubernetes manifest examples |
 | [`package-ts`](https://github.com/gardusi-gustavo/package-ts) | TypeScript / npm utilities and DOM helpers |
 | [`package-ui`](https://github.com/gardusi-gustavo/package-ui) | Pure HTML/CSS design tokens and structural layout partials |
+| [`package-wat`](https://github.com/gardusi-gustavo/package-wat) | Hand-written WebAssembly Text source, build, and runtime harness |
 | [`package-zig`](https://github.com/gardusi-gustavo/package-zig) | Zig low-level memory control, C-interop, and cross-compilation reference |
 
 ### 3. Pure Trigger Workflows (`workflow-*`)
