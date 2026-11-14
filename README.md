@@ -128,7 +128,7 @@ Prerequisites: git, python3, opencode, and an SSH key registered with GitHub.
 4. `git clone git@github.com:gardusi-gustavo/package-yml.git ~/github/meta/package-yml`
 5. Clone the rest with their SSH URLs; `opencode` for ongoing work
 
-Every consumer repository runs only two workflows: `event-pull-request.yml` and `event-release.yml`, imported from `package-yml`.
+Every consumer repository runs `event-pull-request.yml` and `event-release.yml`, imported from `package-yml`. A manual `generate.yml` turns an issue into a draft pull request.
 
 - [Workspace manifest](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/workspace.json)
 - [Local workspace runbook](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/local-workspace.md)
@@ -166,6 +166,16 @@ Agents add issues, comments, labels, and pull requests. They never create or del
 
 - [Operating model](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/operating-model.md)
 - [Operating budgets](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/operating.json)
+
+## Daily workflow
+
+1. **Generate** — pick an issue, run `generate.yml` manually. opencode plus the repository's `GITHUB_TOKEN` produce a **draft** pull request. No CI yet.
+2. **Warm up** — each morning, open the drafts you intend to review and mark them **ready for review**. CI runs only on ready pull requests.
+3. **Review** — read the diff carefully, check the evidence and the tests, then approve with the main account. One approval is required; the bot never approves.
+4. **Merge** — merge once CI and approval pass.
+5. **Release** — publish a GitHub Release. `event-release.yml` builds and attaches the assets.
+
+Drafts are the waiting queue. No personal access token, no scheduled workflow, no empty commits.
 
 ## Roadmap
 
