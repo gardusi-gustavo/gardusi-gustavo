@@ -122,13 +122,13 @@ Local workspace: `github/<prefix>/<repo>`, SSH for the operator, and no local co
 
 Prerequisites: git, python3, opencode, and an SSH key registered with GitHub.
 
-1. `mkdir -p ~/github/{contract,dashboard,database,game,package,workflow,meta}`
+1. `mkdir -p ~/github/{contract,dashboard,database,game,package,meta}`
 2. `ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_github`
 3. Add the public key under Settings, SSH and GPG keys
 4. `git clone git@github.com:gardusi-gustavo/package-yml.git ~/github/meta/package-yml`
 5. Clone the rest with their SSH URLs; `opencode` for ongoing work
 
-Every consumer repository runs only two workflows: `event-pull-request.yml` and `event-tag.yml`, imported from `package-yml`.
+Every consumer repository runs only two workflows: `event-pull-request.yml` and `event-release.yml`, imported from `package-yml`.
 
 - [Workspace manifest](https://github.com/gardusi-gustavo/contract-json/blob/main/governance/workspace.json)
 - [Local workspace runbook](https://github.com/gardusi-gustavo/contract-json/blob/main/docs/runbooks/local-workspace.md)
